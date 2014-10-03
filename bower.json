@@ -1,0 +1,34 @@
+{
+  "name": "myapp",
+  "version": "0.0.1",
+  "authors": [
+    "User <user@example.com>"
+  ],
+  "description": "My brand new mobile app",
+  "main": "app/js/index/js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "app"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.1.2",
+    "jquery": "~2.1.1",
+    "underscore": "~1.6.0",
+    "ratchet": "~2.0.2",
+    "backbone-faux-server": "~0.10.3"
+  },
+  "resolutions": {
+    "underscore": "~1.6.0"
+  }
+}

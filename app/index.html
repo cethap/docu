@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Correo Docunet</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="bower_components/ratchet/dist/css/ratchet.min.css" rel="stylesheet">
+    <link href="bower_components/ratchet/dist/js/ratchet.min.js" rel="stylesheet">
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body>
+
+    <header class="bar bar-nav">
+      <a class="icon icon-refresh pull-right"></a>
+      <h1 class="title">Cajas de Correo</h1>
+    </header>
+
+    <div class="bar bar-footer">
+      <a class="icon icon-compose pull-right" href="#composeModal"></a>
+      <small class="updated-text">Actualizar</small>
+    </div>
+
+    <div class="content">
+
+      <ul class="table-view">
+        <li class="table-view-cell media">
+          <a class="navigate-right" href="inbox.html" data-transition="slide-in">
+            <span class="media-object icon icon-pages pull-left"></span>
+            <div class="media-body">
+              Entrada
+            </div>
+          </a>
+        </li>
+        <li class="table-view-cell media">
+          <a class="navigate-right" href="inbox.html" data-transition="slide-in">
+            <span class="media-object icon icon-person pull-left"></span>
+            <div class="media-body">
+              Asignaciones
+            </div>
+          </a>
+        </li>
+        <li class="table-view-cell media">
+          <a class="navigate-right" href="inbox.html" data-transition="slide-in">
+            <span class="media-object icon icon-star-filled pull-left"></span>
+            <div class="media-body">
+              Borrador
+            </div>
+          </a>
+        </li>
+        <li class="table-view-cell media">
+          <a class="navigate-right" href="inbox.html" data-transition="slide-in">
+            <span class="media-object icon icon-trash pull-left"></span>
+            <div class="media-body">
+              Eliminados
+            </div>
+          </a>
+        </li>
+      </ul>
+
+      <h5 class="content-padded">Otras cuentas</h5>
+      <ul class="table-view">
+        <li class="table-view-cell media">
+          <a class="navigate-right" href="inbox.html" data-transition="slide-in">
+            <span class="media-object icon icon-more pull-left"></span>
+            <div class="media-body">
+              Mezcla
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div><!-- /.content -->
+
+    <!-- Compose modal -->
+    <div id="composeModal" class="modal">
+      <header class="bar bar-nav">
+        <a class="btn btn-link pull-right" href="#composeModal">
+          <strong>Enviar</strong>
+        </a>
+        <a class="btn btn-link pull-left" href="#composeModal">
+          Cancelar
+        </a>
+        <h1 class="title">Nuevo Mensaje</h1>
+      </header>
+
+      <div class="content">
+        <form class="input-group">
+          <input type="text" placeholder="To:">
+          <input type="email" placeholder="From:">
+          <input type="text" placeholder="Subject:">
+          <textarea rows="20"></textarea>
+        </form>
+      </div>
+    </div><!-- /.modal -->
+
+  </body>
+  <script src="dependencies.min.js"></script>
+  <script src="phonegap.js"></script>
+</html>

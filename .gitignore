@@ -1,0 +1,7 @@
+node_modules/
+*.swp
+.grunt/
+_SpecRunner.html
+app/bower_components/
+coverage/
+report/
