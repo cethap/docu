@@ -1,7 +1,2 @@
-node_modules/
-*.swp
-.grunt/
-_SpecRunner.html
-app/bower_components/
-coverage/
-report/
+# OS X
+.DS_Store
