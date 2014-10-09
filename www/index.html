@@ -28,90 +28,37 @@
         <link rel="stylesheet" type="text/css" href="ratchet/dist/css/ratchet.min.css" />
         <link rel="stylesheet" type="text/css" href="css/app.css" />
         <script type="text/javascript" src="ratchet/dist/js/ratchet.min.js"></script>
-        <title>Correo Docunet</title>
+        <title>Docunet</title>
     </head>
     <body>
         <header class="bar bar-nav">
           <a class="icon icon-refresh pull-right"></a>
-          <h1 class="title">Bandejas de correo Docunet</h1>
+          <h1 class="title">Docunet</h1>
         </header>
 
         <div class="bar bar-footer">
           <a class="icon icon-compose pull-right" href="#composeModal"></a>
-          <small class="updated-text">Crear Asignación personal</small>
+          <small class="updated-text">Docunet</small>
         </div>
 
         <div class="content">
-
           <ul class="table-view">
-            <li class="table-view-cell media">
-              <a class="navigate-right" href="inbox.html" data-transition="slide-in">
-                <span class="media-object icon icon-pages pull-left"></span>
-                <div class="media-body">
-                  Entrada
-                </div>
+            <li class="table-view-cell">
+              <a class="navigate-right" href="explprdccion.html">
+                <span class="media-object pull-left icon icon-pages"></span>
+                Explorador de producción
               </a>
             </li>
-            <li class="table-view-cell media">
-              <a class="navigate-right" href="inbox.html" data-transition="slide-in">
-                <span class="media-object icon icon-person pull-left"></span>
-                <div class="media-body">
-                  Asignaciones
-                </div>
-              </a>
-            </li>
-            <li class="table-view-cell media">
-              <a class="navigate-right" href="inbox.html" data-transition="slide-in">
-                <span class="media-object icon icon-star-filled pull-left"></span>
-                <div class="media-body">
-                  Borrador
-                </div>
-              </a>
-            </li>
-            <li class="table-view-cell media">
-              <a class="navigate-right" href="inbox.html" data-transition="slide-in">
-                <span class="media-object icon icon-trash pull-left"></span>
-                <div class="media-body">
-                  Eliminados
-                </div>
-              </a>
-            </li>
-          </ul>
-
-          <h5 class="content-padded">Otras cuentas</h5>
-          <ul class="table-view">
-            <li class="table-view-cell media">
-              <a class="navigate-right" href="inbox.html" data-transition="slide-in">
-                <span class="media-object icon icon-more pull-left"></span>
-                <div class="media-body">
-                  Mezcla
-                </div>
+            <li class="table-view-cell">
+              <a class="navigate-right" href="mail.html">
+                <span class="media-object pull-left icon icon-compose"></span>
+                Correspondencia
               </a>
             </li>
           </ul>
         </div><!-- /.content -->
 
-        <!-- Compose modal -->
-        <div id="composeModal" class="modal">
-          <header class="bar bar-nav">
-            <a class="btn btn-link pull-right" href="#composeModal">
-              <strong>Enviar</strong>
-            </a>
-            <a class="btn btn-link pull-left" href="#composeModal">
-              Cancelar
-            </a>
-            <h1 class="title">Asignación personal</h1>
-          </header>
 
-          <div class="content">
-            <form class="input-group">
-              <input type="text" placeholder="Para:">
-              <input type="email" placeholder="Desde:">
-              <input type="text" placeholder="Asunto:">
-              <textarea rows="20"></textarea>
-            </form>
-          </div>
-        </div><!-- /.modal -->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
