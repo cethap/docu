@@ -25,8 +25,10 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" type="text/css" href="css/fontastic.css" />
         <link rel="stylesheet" type="text/css" href="ratchet/dist/css/ratchet.min.css" />
         <link rel="stylesheet" type="text/css" href="css/app.css" />
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="ratchet/dist/js/ratchet.min.js"></script>
         <title>Docunet</title>
     </head>
@@ -44,7 +46,7 @@
         <div class="content">
           <ul class="table-view">
             <li class="table-view-cell">
-              <a class="navigate-right" href="explprdccion.html">
+              <a class="navigate-right" href="explprdccion.html#series">
                 <span class="media-object pull-left icon icon-pages"></span>
                 Explorador de producción
               </a>
@@ -59,10 +61,11 @@
         </div><!-- /.content -->
 
 
-        <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
+            app.iniPrdccion();
             app.initialize();
         </script>
+        <script type="text/javascript" src="cordova.js"></script>
     </body>
 </html>

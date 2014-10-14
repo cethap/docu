@@ -28,6 +28,7 @@
         <link rel="stylesheet" type="text/css" href="ratchet/dist/css/ratchet.min.css" />
         <link rel="stylesheet" type="text/css" href="css/app.css" />
         <script type="text/javascript" src="ratchet/dist/js/ratchet.min.js"></script>
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
         <title>Correo Docunet</title>
     </head>
     <body>
@@ -45,39 +46,17 @@
         <div class="content">
 
           <ul class="table-view">
-            <li class="table-view-cell media">
-              <a class="navigate-right" href="exprd/carpetas.html" data-transition="slide-in">
-                <span class="media-object icon icon-right pull-left"></span>
-                <div class="media-body">
-                  CARTERA
-                </div>
-              </a>
-            </li>
-            <li class="table-view-cell media">
-              <a class="navigate-right" href="exprd/carpetas.html" data-transition="slide-in">
-                <span class="media-object icon icon-right pull-left"></span>
-                <div class="media-body">
-                  CONTABILIDAD
-                </div>
-              </a>
-            </li>
-            <li class="table-view-cell media">
-              <a class="navigate-right" href="exprd/carpetas.html" data-transition="slide-in">
-                <span class="media-object icon icon-right pull-left"></span>
-                <div class="media-body">
-                  CONTRATOS
-                </div>
-              </a>
-            </li>
-            <li class="table-view-cell media">
-              <a class="navigate-right" href="exprd/carpetas.html" data-transition="slide-in">
-                <span class="media-object icon icon-right pull-left"></span>
-                <div class="media-body">
-                  TESORERIA
-                </div>
-              </a>
-            </li>
           </ul>
+
+
+          <li class="table-view-cell media" style="display:none;" id="tmpl-list-serie">
+            <a class="navigate-right" href="exprd/carpetas.html#carpetas" data-transition="slide-in">
+              <span class="icon-archive-1 pull-left"></span> - 
+              <span class="media-body"></span>
+            </a>
+          </li>
+
+
 
 <!--           <h5 class="content-padded">Otras cuentas</h5>
           <ul class="table-view">
@@ -113,10 +92,11 @@
             </form>
           </div>
         </div><!-- /.modal -->
-        <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
-            app.initialize();
+            //app.iniPrdccion();
+            //app.initialize();
         </script>
+        <script type="text/javascript" src="cordova.js"></script>
     </body>
 </html>
