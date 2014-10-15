@@ -153,6 +153,10 @@
                             $(".media-body",$tmpl).html(data.rows[i].NOMBRE);
                             $(".table-view").append($tmpl);
                         };
+                    }else{
+                        $tmpl_none = $("#tmpl-list-carpetas-none").clone();
+                        $tmpl_none.removeAttr('style');
+                        $(".table-view").append($tmpl_none);                        
                     }
                 }
               },

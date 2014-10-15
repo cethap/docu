@@ -28,79 +28,34 @@
         <link rel="stylesheet" type="text/css" href="ratchet/dist/css/ratchet.min.css" />
         <link rel="stylesheet" type="text/css" href="css/app.css" />
         <script type="text/javascript" src="ratchet/dist/js/ratchet.min.js"></script>
-        <title>Correos</title>
+        <title>Explorador Producción (Documentos)</title>
     </head>
     <body>
 
       <header class="bar bar-nav">
-        <a class="icon icon-left-nav pull-left" href="carpetas.html" data-transition="slide-out"></a>
-        <a class="icon icon-refresh pull-right"></a>
-        <h1 class="title">All inboxes</h1>
+        <a class="icon icon-arrow-1-left pull-left" href="carpetas.html" data-transition="slide-out"></a>
+        <h1 class="title">Explorador Producción (Documentos)</h1>
       </header>
       
       <div class="content">
         <ul class="table-view">
-          <li class="table-view-cell">
-            <a class="navigate-right" href="documentos.html" data-transition="slide-in">
-              01236541
-              <p>15-01-2014 10:27:25</p>
-            </a>
-          </li>
-          <li class="table-view-cell">
-            <a class="navigate-right" href="documentos.html" data-transition="slide-in">
-              465645456
-              <p>15-01-2014 10:27:25</p>
-            </a>
-          </li>
-          <li class="table-view-cell">
-            <a class="navigate-right" href="documentos.html" data-transition="slide-in">
-              654545646545
-              <p>15-01-2014 10:27:25</p>
-            </a>
-          </li>
-          <li class="table-view-cell">
-            <a class="navigate-right" href="documentos.html" data-transition="slide-in">
-              56454564564
-              <p>15-01-2014 10:27:25</p>
-            </a>
-          </li>
-          <li class="table-view-cell">
-            <a class="navigate-right" href="documentos.html" data-transition="slide-in">
-              56454564564
-              <p>15-01-2014 10:27:25</p>
-            </a>
-          </li>
-          <li class="table-view-cell">
-            <a class="navigate-right" href="documentos.html" data-transition="slide-in">
-              654545465
-              <p>15-01-2014 10:27:25</p>
-            </a>
-          </li>
-          <li class="table-view-cell">
-            <a class="navigate-right" href="documentos.html" data-transition="slide-in">
-              5645645456
-              <p>15-01-2014 10:27:25</p>
-            </a>
-          </li>
-          <li class="table-view-cell">
-            <a class="navigate-right" href="documentos.html" data-transition="slide-in">
-              654545645
-              <p>15-01-2014 10:27:25</p>
-            </a>
-          </li>
-          <li class="table-view-cell">
-            <a class="navigate-right" href="documentos.html" data-transition="slide-in">
-              5464545645
-              <p>15-01-2014 10:27:25</p>
-            </a>
-          </li>
-          <li class="table-view-cell">
-            <a class="navigate-right" href="documentos.html" data-transition="slide-in">
-              8974157
-              <p>15-01-2014 10:27:25</p>
-            </a>
-          </li>
         </ul>
+
+        <li class="table-view-cell media" style="display:none;" id="tmpl-list-documentos">
+          <a class="navigate-right" href="exprd/subdocumentos.html#subdocumentos" data-transition="slide-in">
+            <span class="icon-folder-1 pull-left"></span> - 
+            <span class="media-body"></span>
+          </a>
+        </li>
+
+        <li class="table-view-cell media" style="display:none;" id="tmpl-list-documentos-none">
+          <a class="navigate-right" href="exprd/documentos.html#documentos">
+            <i class="icon-fontawesome-webfont-58"></i>
+            <span class="media-body">No se encuentrar registros de documentos</span>
+          </a>
+        </li>
+
+
       </div><!-- /.content -->
     </body>
 </html>
