@@ -51,11 +51,23 @@
                         var srlze = $params[i].split("=");
                         if(srlze.length > 0){
                             $paramSral[srlze[0]] = srlze[1];
-                            console.log($paramSral);
                         }
                     }
                     CnsltaPrdccion.GetCarpetas($paramSral);
                 }
+
+                if(location.hash.indexOf("documentos") > -1 ){
+                    var $params = location.hash.split("&"), $paramSral = {};
+
+                    for (var i = 0; i < $params.length; i++) {
+                        var srlze = $params[i].split("=");
+                        if(srlze.length > 0){
+                            $paramSral[srlze[0]] = srlze[1];
+                        }
+                    }
+                    CnsltaPrdccion.GetDocumentos($paramSral);
+                }
+
 
             });
             
@@ -105,7 +117,7 @@
                 'r': 'Archivo/Sries/action/consulta/consulta[creadoPor]//consulta[descripcion]//consulta[estado]//consulta[nombre]//consulta[tipoConsulta][like]//expl//consulta[tipoConsulta][target]//'
               },
               complete: function(xhr, textStatus) {
-                //called when complete
+                $(".wait").remove();
               },
               success: function(data, textStatus, xhr) {
                 if(data.rows){
@@ -115,7 +127,7 @@
                             $tmpl.removeAttr('style');
                             $(".media-body",$tmpl).html(data.rows[i].NOMBRE);
                             var $navRight = $(".navigate-right",$tmpl);
-                            $navRight.attr("href",$navRight.attr("href")+"&serie="+data.rows[i].CODIGO);
+                            $navRight.attr("href","exprd/carpetas.html#carpetas&serie="+data.rows[i].CODIGO);
                             $(".table-view").append($tmpl);
                         };
                     }
@@ -126,7 +138,7 @@
               }
             });        
         },
-        GetCarpetas: function(data){  
+        GetCarpetas: function(data){
             $(".table-view").html("");      
             $.ajax({
               url: 'http://192.168.1.68/docunet_movil/bin/fyii/index.php',
@@ -142,7 +154,7 @@
                 'r': 'Archivo/Crptas/action/consulta/serie/'+data.serie+'/tpocarpeta//consulta[serie]/'+data.serie+'/consulta[tpocarpeta]//consulta[creadoPor]//consulta[descripcion]//consulta[estado]/0/consulta[fechaCreacionInicio]//consulta[fechaCreacionFin]//consulta[indice1]//consulta[indice2]//consulta[indice3]//consulta[indice4]//consulta[nombre]//consulta[tipoConsulta][like]/M/consulta[tipoConsulta][target]/C/expl/1/consulta[ubicacion]/'
               },
               complete: function(xhr, textStatus) {
-                //called when complete
+                $(".wait").remove();
               },
               success: function(data, textStatus, xhr) {
                 if(data.rows){
@@ -151,6 +163,8 @@
                             $tmpl = $("#tmpl-list-carpetas").clone();
                             $tmpl.removeAttr('style');
                             $(".media-body",$tmpl).html(data.rows[i].NOMBRE);
+                            var $navRight = $(".navigate-right",$tmpl);
+                            $navRight.attr("href","documentos.html#documentos&serie="+data.rows[i].SERIECARP+"&tpocarpeta="+data.rows[i].CODIGOTIPO+"&carpeta="+data.rows[i].CODIGO);
                             $(".table-view").append($tmpl);
                         };
                     }else{
@@ -164,7 +178,55 @@
                 //called when there is an error
               }
             });        
-        }        
+        },
+        GetDocumentos: function(data){
+            $(".table-view").html(""); 
+            $srie = data.serie;
+            $.ajax({
+              url: 'http://192.168.1.68/docunet_movil/bin/fyii/index.php',
+              type: 'GET',
+              dataType: 'json',
+              data: {
+                'consulta_param[tipo]': 0,
+                'consulta_param[target]':'',
+                'consulta_param[tipo_target]':'',
+                'consulta[tipoConsulta][sort]':'NOMBRE ASC',
+                'Ram':'_6238rg3xu',
+                'ignore':10,
+                'r': 'Archivo/Dcmntos/action/consulta/serie/'+data.serie+'/tpocarpeta/'+data.tpocarpeta+'/consulta[serie]/'+data.serie+'/consulta[IdDcmnto]//consulta[tpocarpeta]/'+data.tpocarpeta+'/consulta[crpta]/'+data.carpeta+'/consulta[tpo_dcmnto]//consulta[creadoPor]//consulta[descripcion]//consulta[estado]/0/consulta[fechaCreacionInicio]//consulta[fechaCreacionFin]//consulta[indice1]//consulta[indice2]//consulta[indice3]//consulta[indice4]//consulta[indice5]//consulta[indice6]//consulta[indice7]//consulta[indice8]//consulta[indice9]//consulta[nombre]//consulta[tipoConsulta][like]/M/consulta[tipoConsulta][target]/D/expl/1/consulta[ubicacion]/'
+              },
+              complete: function(xhr, textStatus) {
+                $(".wait").remove();
+              },
+              success: function(data, textStatus, xhr) {
+                if(data.rows){
+                    if(data.rows.length){
+                        for (var i = 0; i < data.rows.length; i++) {
+                            $tmpl = $("#tmpl-list-documentos").clone();
+                            $tmpl.removeAttr('style');
+                            $(".media-body",$tmpl).html(data.rows[i].NOMBRE);
+
+                            var $navRight = $(".navigate-right",$tmpl);
+                            var $navLeft = $(".BckLeft");
+                            $navRight.attr("href","#");//"exprd/subdocumentos.html#documentos&serie="+data.rows[i].SERIECARP+"&tpocarpeta="+data.rows[i].CODIGOTIPO+"&carpeta="+data.rows[i].CODIGO);
+                            $navLeft.attr("href","carpetas.html#carpetas&serie="+$srie);
+
+                            $(".table-view").append($tmpl);
+
+
+                        };
+                    }else{
+                        $tmpl_none = $("#tmpl-list-documentos-none").clone();
+                        $tmpl_none.removeAttr('style');
+                        $(".table-view").append($tmpl_none);                        
+                    }
+                }
+              },
+              error: function(xhr, textStatus, errorThrown) {
+                //called when there is an error
+              }
+            });        
+        }           
     }
 
 })(jQuery);

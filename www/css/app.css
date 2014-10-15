@@ -10,3 +10,16 @@
 .table-view-cell .icon {
   color: #007aff;
 }
+
+
+.wait {
+    background-color: #fff;
+    background-image: url("../img/ajax_1.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
