@@ -18,7 +18,7 @@
  */
 
 (function($){
-
+    window.URI = "http://181.49.3.210/DM/bin/fyii/index.php";
     window.app = {
         // Application Constructor
         initialize: function() {
@@ -104,7 +104,7 @@
         GetSeries: function(){  
             $(".table-view").html("");      
             $.ajax({
-              url: 'http://181.49.3.210/DM/bin/fyii/index.php',
+              url: window.URI,
               type: 'GET',
               dataType: 'json',
               data: {
@@ -141,7 +141,7 @@
         GetCarpetas: function(data){
             $(".table-view").html("");      
             $.ajax({
-              url: 'http://192.168.1.68/docunet_movil/bin/fyii/index.php',
+              url: window.URI,
               type: 'GET',
               dataType: 'json',
               data: {
@@ -183,7 +183,7 @@
             $(".table-view").html(""); 
             $srie = data.serie;
             $.ajax({
-              url: 'http://192.168.1.68/docunet_movil/bin/fyii/index.php',
+              url: window.URI,
               type: 'GET',
               dataType: 'json',
               data: {
