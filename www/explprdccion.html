@@ -25,9 +25,9 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" type="text/css" href="css/fontastic.css" />
         <link rel="stylesheet" type="text/css" href="ratchet/dist/css/ratchet.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/app.css" />
-        <script type="text/javascript" src="ratchet/dist/js/ratchet.min.js"></script>
+        <!--script type="text/javascript" src="ratchet/dist/js/ratchet.min.js"></script-->
         <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
         <title>Explorador Producción (Series)</title>
     </head>
@@ -49,25 +49,12 @@
           <div class="wait"></div>
 
           <li class="table-view-cell media" style="display:none;" id="tmpl-list-serie">
-            <a class="navigate-right" href="exprd/carpetas.html#carpetas" data-transition="slide-in">
+            <a class="navigate-right" href="exprd/carpetas.html#carpetas">
               <span class="icon-archive-1 pull-left"></span> - 
               <span class="media-body"></span>
             </a>
           </li>
 
-
-
-<!--           <h5 class="content-padded">Otras cuentas</h5>
-          <ul class="table-view">
-            <li class="table-view-cell media">
-              <a class="navigate-right" href="inbox.html" data-transition="slide-in">
-                <span class="media-object icon icon-more pull-left"></span>
-                <div class="media-body">
-                  Mezcla
-                </div>
-              </a>
-            </li>
-          </ul> -->
         </div><!-- /.content -->
 
         <!-- Compose modal -->
@@ -91,9 +78,10 @@
             </form>
           </div>
         </div><!-- /.modal -->
+
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
-            //app.iniPrdccion();
+            app.iniPrdccion();
             //app.initialize();
         </script>
         <script type="text/javascript" src="cordova.js"></script>
