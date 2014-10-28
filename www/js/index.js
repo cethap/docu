@@ -104,7 +104,7 @@
         GetSeries: function(){  
             $(".table-view").html("");      
             $.ajax({
-              url: 'http://192.168.1.68/docunet_movil/bin/fyii/index.php',
+              url: 'http://181.49.3.210/DM/bin/fyii/index.php',
               type: 'GET',
               dataType: 'json',
               data: {
