@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" type="text/css" href="../css/fontastic.css" />
+        <link rel="stylesheet" type="text/css" href="../ratchet/dist/css/ratchet.min.css" />
+        <link rel="stylesheet" type="text/css" href="../css/app.css" />
+        <script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
+        <title>Explorador Producción (Subdocumentos)</title>
+    </head>
+    <body>
+
+      <header class="bar bar-nav">
+        <a class="icon icon-arrow-1-left pull-left BckLeft" href="carpetas.html"></a>
+        <h1 class="title">Explorador Producción (Subdocumentos)</h1>
+      </header>
+      
+      
+      <div class="content">
+        <div class="wait"></div>
+        <ul class="table-view">
+        </ul>
+
+        <li class="table-view-cell media" style="display:none;" id="tmpl-list-subdocumentos">
+          <a class="navigate-right" href="exprd/subdocumentos.html#subdocumentos">
+            <span class="icon-documento pull-left"></span> - 
+            <span class="media-body"></span>
+          </a>
+        </li>
+
+        <li class="table-view-cell media" style="display:none;" id="tmpl-list-subdocumentos-none">
+          <a class="navigate-right" href="exprd/subdocumentos.html#subdocumentos">
+            <i class="icon-fontawesome-webfont-58"></i>
+            <span class="media-body">No se encuentran registros de Subdocumentos</span>
+          </a>
+        </li>
+        <script type="text/javascript" src="../js/index.js"></script>
+        <script type="text/javascript">
+            app.iniPrdccion();
+            //app.initialize();
+        </script>
+        <script type="text/javascript" src="../cordova.js"></script>
+
+      </div><!-- /.content -->
+    </body>
+</html>

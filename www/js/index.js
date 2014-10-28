@@ -206,21 +206,17 @@
                             $tmpl = $("#tmpl-list-documentos").clone();
                             $tmpl.removeAttr('style');
                             $(".media-body",$tmpl).html(data.rows[i].NOMBRE);
-
                             var $navRight = $(".navigate-right",$tmpl);
-                            var $navLeft = $(".BckLeft");
                             $navRight.attr("href","#");//"exprd/subdocumentos.html#documentos&serie="+data.rows[i].SERIECARP+"&tpocarpeta="+data.rows[i].CODIGOTIPO+"&carpeta="+data.rows[i].CODIGO);
-                            $navLeft.attr("href","carpetas.html#carpetas&serie="+$srie);
-
                             $(".table-view").append($tmpl);
-
-
                         };
                     }else{
                         $tmpl_none = $("#tmpl-list-documentos-none").clone();
                         $tmpl_none.removeAttr('style');
                         $(".table-view").append($tmpl_none);                        
                     }
+                    var $navLeft = $(".BckLeft");
+                    $navLeft.attr("href","carpetas.html#carpetas&serie="+$srie);
                 }
               },
               error: function(xhr, textStatus, errorThrown) {
