@@ -34,3 +34,10 @@
 .hide{
   display: none;
 }
+
+.iconCierra {
+    font-size: 31px !important;
+    padding: 4px 0 0;
+    position: relative;
+    z-index: 30;
+}

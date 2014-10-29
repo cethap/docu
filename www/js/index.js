@@ -171,37 +171,31 @@
         },
         GetDocumentos: function(data){
             var Ddocument = null;
-            $(document).on("click",".table-view-cell",function(){
+            $(document).on("tap",".table-view-cell",function(){
                 var el = $(this);
                 Ddocument = JSON.parse(el.attr("dataP"));
+
+                if(parseInt(Ddocument.NUM_ARCHIVOS,10)){
+                    $("#composeModal .btn-block").removeClass('hide');
+                }else{
+                    $("#composeModal .btn-block").addClass('hide');
+                }
+
+                $("#composeModal [name='codigo']").val(Ddocument.CODIGO);
+                $("#composeModal [name='tipo']").val(Ddocument.NOMBRE_TIPODCTO);
+                $("#composeModal [name='descripcion']").val(Ddocument.DESCRIPCION);
+                $("#composeModal [name='vigencia']").val(Ddocument.FECHA_VGNCIA);
+                $("#composeModal [name='creacion']").val(Ddocument.FECHA_CREACION);
+                $("#composeModal [name='usuario']").val(Ddocument.NOMBRE_USUARIO);
             });
 
-            $(document).on("click","#composeModal .btn-block",function(e){
+            $(document).on("tap","#composeModal .btn-block",function(e){
                 e.preventDefault();
                 location.href=window.URI+"?r=Archivo/MnjoArchvos/action/descargar/serie/"+Ddocument.CODIGO_SERIE+
                 "/tpocarpeta/"+Ddocument.TPO_CRPTA_CODIGO+"/tpodocumento/"+Ddocument.CODIGOTIPO+
                 "/documento/"+Ddocument.CODIGO;
             });
 
-            window.onhashchange = function() {
-               if(location.hash == "#composeModal"){
-                if(Ddocument){
-
-                    if(parseInt(Ddocument.NUM_ARCHIVOS,10)){
-                        $("#composeModal .btn-block").removeClass('hide');
-                    }else{
-                        $("#composeModal .btn-block").addClass('hide');
-                    }
-
-                    $("#composeModal [name='codigo']").val(Ddocument.CODIGO);
-                    $("#composeModal [name='tipo']").val(Ddocument.NOMBRE_TIPODCTO);
-                    $("#composeModal [name='descripcion']").val(Ddocument.DESCRIPCION);
-                    $("#composeModal [name='vigencia']").val(Ddocument.FECHA_VGNCIA);
-                    $("#composeModal [name='creacion']").val(Ddocument.FECHA_CREACION);
-                    $("#composeModal [name='usuario']").val(Ddocument.NOMBRE_USUARIO);
-                }
-               }
-            };
 
             $(".table-view").html(""); 
             $srie = data.serie;
