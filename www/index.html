@@ -25,41 +25,44 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link rel="stylesheet" type="text/css" href="css/fontastic.css" />
         <link rel="stylesheet" type="text/css" href="ratchet/dist/css/ratchet.min.css" />
         <link rel="stylesheet" type="text/css" href="css/app.css" />
-        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="ratchet/dist/js/ratchet.min.js"></script>
         <title>Docunet</title>
     </head>
     <body>
         <header class="bar bar-nav">
+          <a class="icon icon-refresh pull-right"></a>
           <h1 class="title">Docunet</h1>
         </header>
 
         <div class="bar bar-footer">
-          <a href="#composeModal"></a>
+          <a class="icon icon-compose pull-right" href="#composeModal"></a>
           <small class="updated-text">Docunet</small>
         </div>
 
         <div class="content">
           <ul class="table-view">
             <li class="table-view-cell">
-              <a class="navigate-right" href="explprdccion.html#series">
-                <span class="icon-book-open pull-left icon"></span> &nbsp; Explorador de producción
+              <a class="navigate-right" href="explprdccion.html">
+                <span class="media-object pull-left icon icon-pages"></span>
+                Explorador de producción
               </a>
-
             </li>
             <li class="table-view-cell">
-              <a class="navigate-right" href="mail.html" class="navigate-right" data-transition="slide-in">
-                <span class="icon-mail pull-left icon"></span> &nbsp; Correspondencia
+              <a class="navigate-right" href="mail.html">
+                <span class="media-object pull-left icon icon-compose"></span>
+                Correspondencia
               </a>
             </li>
           </ul>
         </div><!-- /.content -->
 
 
-        <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
     </body>
 </html>
