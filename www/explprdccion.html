@@ -25,71 +25,32 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" type="text/css" href="css/fontastic.css" />
         <link rel="stylesheet" type="text/css" href="ratchet/dist/css/ratchet.min.css" />
         <link rel="stylesheet" type="text/css" href="css/app.css" />
         <script type="text/javascript" src="ratchet/dist/js/ratchet.min.js"></script>
-        <title>Correo Docunet</title>
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+        <title>Explorador Producción (Series)</title>
     </head>
     <body>
         <header class="bar bar-nav">
-          <a class="icon icon-left-nav pull-left" href="index.html"></a>
-          <a class="icon icon-refresh pull-right"></a>
+          <a class="icon icon-arrow-1-left pull-left" href="index.html" data-ignore="push"></a>
           <h1 class="title">Explorador Producción (Series)</h1>
         </header>
-
-<!--         <div class="bar bar-footer">
-          <a class="icon icon-compose pull-right" href="#composeModal"></a>
-          <small class="updated-text">Crear Asignación personal</small>
-        </div> -->
 
         <div class="content">
 
           <ul class="table-view">
-            <li class="table-view-cell media">
-              <a class="navigate-right" href="exprd/carpetas.html" data-transition="slide-in">
-                <span class="media-object icon icon-right pull-left"></span>
-                <div class="media-body">
-                  CARTERA
-                </div>
-              </a>
-            </li>
-            <li class="table-view-cell media">
-              <a class="navigate-right" href="exprd/carpetas.html" data-transition="slide-in">
-                <span class="media-object icon icon-right pull-left"></span>
-                <div class="media-body">
-                  CONTABILIDAD
-                </div>
-              </a>
-            </li>
-            <li class="table-view-cell media">
-              <a class="navigate-right" href="exprd/carpetas.html" data-transition="slide-in">
-                <span class="media-object icon icon-right pull-left"></span>
-                <div class="media-body">
-                  CONTRATOS
-                </div>
-              </a>
-            </li>
-            <li class="table-view-cell media">
-              <a class="navigate-right" href="exprd/carpetas.html" data-transition="slide-in">
-                <span class="media-object icon icon-right pull-left"></span>
-                <div class="media-body">
-                  TESORERIA
-                </div>
-              </a>
-            </li>
           </ul>
+          <div class="wait"></div>
 
-<!--           <h5 class="content-padded">Otras cuentas</h5>
-          <ul class="table-view">
-            <li class="table-view-cell media">
-              <a class="navigate-right" href="inbox.html" data-transition="slide-in">
-                <span class="media-object icon icon-more pull-left"></span>
-                <div class="media-body">
-                  Mezcla
-                </div>
-              </a>
-            </li>
-          </ul> -->
+          <li class="table-view-cell media" style="display:none;" id="tmpl-list-serie">
+            <a class="navigate-right" href="exprd/carpetas.html#carpetas" data-ignore="push">
+              <span class="icon-archive-1 pull-left"></span> &nbsp; 
+              <span class="media-body"></span>
+            </a>
+          </li>
+
         </div><!-- /.content -->
 
         <!-- Compose modal -->
@@ -113,10 +74,11 @@
             </form>
           </div>
         </div><!-- /.modal -->
-        <script type="text/javascript" src="cordova.js"></script>
+
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
-            app.initialize();
+            app.iniPrdccion();
         </script>
+        <script type="text/javascript" src="cordova.js"></script>
     </body>
 </html>
