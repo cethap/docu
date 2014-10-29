@@ -192,7 +192,7 @@
                     }else{
                         $("#composeModal .btn-block").addClass('hide');
                     }
-x
+
                     $("#composeModal [name='codigo']").val(Ddocument.CODIGO);
                     $("#composeModal [name='tipo']").val(Ddocument.NOMBRE_TIPODCTO);
                     $("#composeModal [name='descripcion']").val(Ddocument.DESCRIPCION);
