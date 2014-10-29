@@ -28,7 +28,7 @@
         <link rel="stylesheet" type="text/css" href="../css/fontastic.css" />
         <link rel="stylesheet" type="text/css" href="../ratchet/dist/css/ratchet.min.css" />
         <link rel="stylesheet" type="text/css" href="../css/app.css" />
-        <!--script type="text/javascript" src="ratchet/dist/js/ratchet.min.js"></script-->
+        <script type="text/javascript" src="ratchet/dist/js/ratchet.min.js"></script>
         <script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
 
         <title>Explorador Producción (carpetas)</title>
@@ -36,7 +36,7 @@
     <body>
 
       <header class="bar bar-nav">
-        <a class="icon icon-arrow-1-left pull-left BckLeft" href="../explprdccion.html#series"></a>
+        <a class="icon icon-arrow-1-left pull-left BckLeft" href="../explprdccion.html#series" data-ignore="push"></a>
         <h1 class="title">Explorador Producción (carpetas)</h1>
       </header>
 
@@ -47,14 +47,14 @@
         </ul>
 
         <li class="table-view-cell media" style="display:none;" id="tmpl-list-carpetas">
-          <a class="navigate-right" href="exprd/carpetas.html#documentos">
-            <span class="icon-folder-1 pull-left"></span> - 
+          <a class="navigate-right" href="exprd/carpetas.html#documentos" data-ignore="push">
+            <span class="icon-folder-1 pull-left"></span> &nbsp; 
             <span class="media-body"></span>
           </a>
         </li>
 
         <li class="table-view-cell media" style="display:none;" id="tmpl-list-carpetas-none">
-          <a class="navigate-right" href="exprd/carpetas.html#carpetas">
+          <a class="navigate-right" href="exprd/carpetas.html#carpetas" data-ignore="push">
             <i class="icon-fontawesome-webfont-58"></i>
             <span class="media-body">No se encuentrar registros de carpetas</span>
           </a>
@@ -62,7 +62,6 @@
         <script type="text/javascript" src="../js/index.js"></script>
         <script type="text/javascript">
             app.iniPrdccion();
-            //app.initialize();
         </script>
         <script type="text/javascript" src="../cordova.js"></script>
 

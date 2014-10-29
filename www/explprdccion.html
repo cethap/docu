@@ -27,20 +27,16 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <link rel="stylesheet" type="text/css" href="css/fontastic.css" />
         <link rel="stylesheet" type="text/css" href="ratchet/dist/css/ratchet.min.css" />
-        <!--script type="text/javascript" src="ratchet/dist/js/ratchet.min.js"></script-->
+        <link rel="stylesheet" type="text/css" href="css/app.css" />
+        <script type="text/javascript" src="ratchet/dist/js/ratchet.min.js"></script>
         <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
         <title>Explorador Producción (Series)</title>
     </head>
     <body>
         <header class="bar bar-nav">
-          <a class="icon icon-arrow-1-left pull-left" href="index.html"></a>
+          <a class="icon icon-arrow-1-left pull-left" href="index.html" data-ignore="push"></a>
           <h1 class="title">Explorador Producción (Series)</h1>
         </header>
-
-<!--         <div class="bar bar-footer">
-          <a class="icon icon-compose pull-right" href="#composeModal"></a>
-          <small class="updated-text">Crear Asignación personal</small>
-        </div> -->
 
         <div class="content">
 
@@ -49,8 +45,8 @@
           <div class="wait"></div>
 
           <li class="table-view-cell media" style="display:none;" id="tmpl-list-serie">
-            <a class="navigate-right" href="exprd/carpetas.html#carpetas">
-              <span class="icon-archive-1 pull-left"></span> - 
+            <a class="navigate-right" href="exprd/carpetas.html#carpetas" data-ignore="push">
+              <span class="icon-archive-1 pull-left"></span> &nbsp; 
               <span class="media-body"></span>
             </a>
           </li>
@@ -82,7 +78,6 @@
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.iniPrdccion();
-            //app.initialize();
         </script>
         <script type="text/javascript" src="cordova.js"></script>
     </body>

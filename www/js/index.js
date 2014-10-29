@@ -20,6 +20,12 @@
 (function($){
 
     window.URI = "http://181.49.3.210/DM/bin/fyii/index.php";
+
+
+    window.addEventListener('push', function(){
+        app.iniPrdccion();
+    });
+
     window.app = {
         // Application Constructor
         initialize: function() {
@@ -28,50 +34,33 @@
 
         iniPrdccion: function(){
 
-            // var _wr = function(type) {
-            //     var orig = history[type];
-            //     return function() {
-            //         var rv = orig.apply(this, arguments);
-            //         var e = new Event(type);
-            //         e.arguments = arguments;
-            //         window.dispatchEvent(e);
-            //         return rv;
-            //     };
-            // };
-            // history.pushState = _wr('pushState'), history.replaceState = _wr('replaceState');
+            if(location.hash.indexOf("series") > -1 ){
+                CnsltaPrdccion.GetSeries();
+            }
 
-            // window.addEventListener('replaceState', function(e) {
-                if(location.hash.indexOf("series") > -1 ){
-                    CnsltaPrdccion.GetSeries();
-                }
+            if(location.hash.indexOf("carpetas") > -1 ){
+                var $params = location.hash.split("&"), $paramSral = {};
 
-                if(location.hash.indexOf("carpetas") > -1 ){
-                    var $params = location.hash.split("&"), $paramSral = {};
-
-                    for (var i = 0; i < $params.length; i++) {
-                        var srlze = $params[i].split("=");
-                        if(srlze.length > 0){
-                            $paramSral[srlze[0]] = srlze[1];
-                        }
+                for (var i = 0; i < $params.length; i++) {
+                    var srlze = $params[i].split("=");
+                    if(srlze.length > 0){
+                        $paramSral[srlze[0]] = srlze[1];
                     }
-                    CnsltaPrdccion.GetCarpetas($paramSral);
                 }
+                CnsltaPrdccion.GetCarpetas($paramSral);
+            }
 
-                if(location.hash.indexOf("documentos") > -1 ){
-                    var $params = location.hash.split("&"), $paramSral = {};
+            if(location.hash.indexOf("documentos") > -1 ){
+                var $params = location.hash.split("&"), $paramSral = {};
 
-                    for (var i = 0; i < $params.length; i++) {
-                        var srlze = $params[i].split("=");
-                        if(srlze.length > 0){
-                            $paramSral[srlze[0]] = srlze[1];
-                        }
+                for (var i = 0; i < $params.length; i++) {
+                    var srlze = $params[i].split("=");
+                    if(srlze.length > 0){
+                        $paramSral[srlze[0]] = srlze[1];
                     }
-                    CnsltaPrdccion.GetDocumentos($paramSral);
                 }
-
-
-            //});
-            
+                CnsltaPrdccion.GetDocumentos($paramSral);
+            }
         },
 
         // Bind Event Listeners
@@ -181,6 +170,39 @@
             });        
         },
         GetDocumentos: function(data){
+            var Ddocument = null;
+            $(document).on("click",".table-view-cell",function(){
+                var el = $(this);
+                Ddocument = JSON.parse(el.attr("dataP"));
+            });
+
+            $(document).on("click","#composeModal .btn-block",function(e){
+                e.preventDefault();
+                location.href=window.URI+"?r=Archivo/MnjoArchvos/action/descargar/serie/"+Ddocument.CODIGO_SERIE+
+                "/tpocarpeta/"+Ddocument.TPO_CRPTA_CODIGO+"/tpodocumento/"+Ddocument.CODIGOTIPO+
+                "/documento/"+Ddocument.CODIGO;
+            });
+
+            window.onhashchange = function() {
+               if(location.hash == "#composeModal"){
+                if(Ddocument){
+
+                    if(parseInt(Ddocument.NUM_ARCHIVOS,10)){
+                        $("#composeModal .btn-block").removeClass('hide');
+                    }else{
+                        $("#composeModal .btn-block").addClass('hide');
+                    }
+x
+                    $("#composeModal [name='codigo']").val(Ddocument.CODIGO);
+                    $("#composeModal [name='tipo']").val(Ddocument.NOMBRE_TIPODCTO);
+                    $("#composeModal [name='descripcion']").val(Ddocument.DESCRIPCION);
+                    $("#composeModal [name='vigencia']").val(Ddocument.FECHA_VGNCIA);
+                    $("#composeModal [name='creacion']").val(Ddocument.FECHA_CREACION);
+                    $("#composeModal [name='usuario']").val(Ddocument.NOMBRE_USUARIO);
+                }
+               }
+            };
+
             $(".table-view").html(""); 
             $srie = data.serie;
             $.ajax({
@@ -204,10 +226,11 @@
                     if(data.rows.length){
                         for (var i = 0; i < data.rows.length; i++) {
                             $tmpl = $("#tmpl-list-documentos").clone();
+                            $tmpl.attr("dataP",JSON.stringify(data.rows[i]));
                             $tmpl.removeAttr('style');
                             $(".media-body",$tmpl).html(data.rows[i].NOMBRE);
                             var $navRight = $(".navigate-right",$tmpl);
-                            $navRight.attr("href","#");//"exprd/subdocumentos.html#documentos&serie="+data.rows[i].SERIECARP+"&tpocarpeta="+data.rows[i].CODIGOTIPO+"&carpeta="+data.rows[i].CODIGO);
+                            $navRight.attr("href","#composeModal");//"exprd/subdocumentos.html#documentos&serie="+data.rows[i].SERIECARP+"&tpocarpeta="+data.rows[i].CODIGOTIPO+"&carpeta="+data.rows[i].CODIGO);
                             $(".table-view").append($tmpl);
                         };
                     }else{
