@@ -189,36 +189,45 @@
                 $("#composeModal [name='usuario']").val(Ddocument.NOMBRE_USUARIO);
             });
 
+            $(document).on("tap",".BckLeft",function(e){
+                e.preventDefault();
+                var el = $(this);
+                location.href = el.attr("href");
+            });
+
             $(document).on("tap","#composeModal .btn-block",function(e){
-                //e.preventDefault();
+                e.preventDefault();
+                $("#previsual").attr("src",window.URI+"?r=Archivo/MnjoArchvos/action/descargar/serie/"+Ddocument.CODIGO_SERIE+
+                "/tpocarpeta/"+Ddocument.TPO_CRPTA_CODIGO+"/tpodocumento/"+Ddocument.CODIGOTIPO+
+                "/documento/"+Ddocument.CODIGO);
                 // location.href=window.URI+"?r=Archivo/MnjoArchvos/action/descargar/serie/"+Ddocument.CODIGO_SERIE+
                 // "/tpocarpeta/"+Ddocument.TPO_CRPTA_CODIGO+"/tpodocumento/"+Ddocument.CODIGOTIPO+
                 // "/documento/"+Ddocument.CODIGO;
-                var downFile = window.URI+"?r=Archivo/MnjoArchvos/action/descargar/serie/"+Ddocument.CODIGO_SERIE+
-                "/tpocarpeta/"+Ddocument.TPO_CRPTA_CODIGO+"/tpodocumento/"+Ddocument.CODIGOTIPO+
-                "/documento/"+Ddocument.CODIGO;
+                // var downFile = window.URI+"?r=Archivo/MnjoArchvos/action/descargar/serie/"+Ddocument.CODIGO_SERIE+
+                // "/tpocarpeta/"+Ddocument.TPO_CRPTA_CODIGO+"/tpodocumento/"+Ddocument.CODIGOTIPO+
+                // "/documento/"+Ddocument.CODIGO;
 
-                var fileTransfer = new FileTransfer();
-                var uri = encodeURI(downFile);
+                // var fileTransfer = new FileTransfer();
+                // var uri = encodeURI(downFile);
 
-                fileTransfer.download(
-                    uri,
-                    fileURL,
-                    function(entry) {
-                        console.log("download complete: " + entry.toURL());
-                    },
-                    function(error) {
-                        console.log("download error source " + error.source);
-                        console.log("download error target " + error.target);
-                        console.log("upload error code" + error.code);
-                    },
-                    false,
-                    {
-                        headers: {
-                            "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
-                        }
-                    }
-                );
+                // fileTransfer.download(
+                //     uri,
+                //     fileURL,
+                //     function(entry) {
+                //         console.log("download complete: " + entry.toURL());
+                //     },
+                //     function(error) {
+                //         console.log("download error source " + error.source);
+                //         console.log("download error target " + error.target);
+                //         console.log("upload error code" + error.code);
+                //     },
+                //     false,
+                //     {
+                //         headers: {
+                //             "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+                //         }
+                //     }
+                // );
 
 
             });
