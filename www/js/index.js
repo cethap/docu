@@ -173,6 +173,7 @@
             var Ddocument = null;
             $(document).on("tap",".table-view-cell",function(){
                 var el = $(this);
+                $("#previsual").attr("src","");
                 Ddocument = JSON.parse(el.attr("dataP"));
 
                 if(parseInt(Ddocument.NUM_ARCHIVOS,10)){
